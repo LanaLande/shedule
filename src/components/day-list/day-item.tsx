@@ -1,3 +1,4 @@
+import type { HTMLAttributes } from "react"
 
 interface IProps {
   dayName : string,
@@ -5,13 +6,13 @@ interface IProps {
   dayDuration? : string,
 }
 
-export function DayItem({dayName,dayColor,dayDuration  } :  IProps){
+export function DayItem({dayName,dayColor,dayDuration, onClick} : HTMLAttributes<HTMLDivElement> &  IProps){
   if(!dayDuration) return <></>
   
   const [start, end] =  dayDuration.split('-')
 
   return(
-    <div className="hover:scale-105 transition-transform cursor-pointer unselectable">
+    <div onClick={ onClick}  className="hover:scale-105 transition-transform cursor-pointer unselectable">
         <div className="py-2 px-3 text-lg rounded-t-xl" style={{backgroundColor:  dayColor}}>
             {dayName}
         </div>

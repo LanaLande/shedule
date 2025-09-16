@@ -1,10 +1,22 @@
+import clsx from "clsx";
 import { DayList } from "../day-list/day-list";
 
-export function Content(){
+export function Content({className}:{className? : string}){
+   
+
+ 
+
   return(
-    <div className="h-screen w-9/10">
+    <div className={clsx("", className)}>
       <DayList />
+      
 
     </div>
   )
 }
+
+// 1) заводим состояние массива лекций для отрисовка
+// 2) делаем так, что при нажатии на день , у нас происходит функция, которую мы передали сверху, например консоль лог
+// 3)  делаем так, чтобы у нас эта самая функция меняла состояние стэйта лекций для отрисовки
+// 4) и пусть компонент контента просто берет и выводит стэйт даже пока не вернул jsx 
+// 5) завозим подалку 
