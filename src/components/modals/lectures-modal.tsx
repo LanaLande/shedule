@@ -13,15 +13,13 @@ export function LecturesModal ({currentDayName, currentLectures, isOpen, onClose
   console.log(currentLectures)
 
   return (
-    <Modal backdrop='blur' isOpen={isOpen} onClose={onClose} >
-      <>
+    <Modal size="5xl" backdrop='blur' isOpen={isOpen} onClose={onClose} classNames={{base : 'bg-[#431757] text-[#ffffff] h-7/10 ', wrapper: "overflow-hidden"}}>
         <ModalContent>
-              <ModalHeader className="flex flex-col gap-1">{currentDayName}</ModalHeader>
+              <ModalHeader className="flex  flex-col gap-1">{currentDayName}</ModalHeader>
               <ModalBody>
                 {currentDayName}
               </ModalBody>
         </ModalContent>
-      </>
       </Modal>
   )
 
