@@ -14,8 +14,8 @@ export function DayList ({className } : {className?:string}){
 
 
 
-let [currentDayName, setCurrentDayName] = useState<string>();
-let [currentLectures, setCurrentLectures] = useState<ILecture[]>();
+let [currentDayName, setCurrentDayName] = useState<string>(DAYS_CONFIG[0].name);
+let [currentLectures, setCurrentLectures] = useState<ILecture[]>(DAYS_CONFIG[0].lectures);
 
 
 return(
