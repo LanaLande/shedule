@@ -1,4 +1,6 @@
-import { getWeek } from "date-fns/getWeek"
+import { COLORS_CONFIG } from "./colors.config"
+import { getCurrentDay } from "./helpers/get-current-day"
+import { currentDate, isEvenWeek } from "./time.config"
 
 
  export interface ILecture {
@@ -15,10 +17,6 @@ export interface IDay {
   lectures : ILecture[]
   color : string
 }
-
- export const isEvenNumber = !(getWeek(new Date(), {
-            weekStartsOn: 1
-          }) % 2 === 0)
 
 const DAYS_CONFIG : IDay[]= [
  {
@@ -53,13 +51,13 @@ const DAYS_CONFIG : IDay[]= [
       audition : '314'
     },
   ],
-  color : '#613157'
+  color: COLORS_CONFIG.dayPassiveHeader 
  },
    
   {
   name: 'Вторник',
   lectures : [ 
-    isEvenNumber 
+    isEvenWeek 
   ? 
    {
       name : 'Англ яз',
@@ -90,7 +88,7 @@ const DAYS_CONFIG : IDay[]= [
       teacherIF : 'Надежда Ивановна-Владислав Игоревич',
       audition : '323'
     },
-    ...(isEvenNumber ? [{
+    ...(isEvenWeek ? [{
       name : 'Физра',
       timeDuration : '16:20-18:00',
       teacher : 'Кривицкий С.В.-Праволоцкий А.Н.',
@@ -98,7 +96,8 @@ const DAYS_CONFIG : IDay[]= [
       audition : 'Спортзал'
     } as ILecture ] : [])
   ],
-  color : '#613157'
+  color: COLORS_CONFIG.dayPassiveHeader 
+
  },
 
   {
@@ -126,7 +125,8 @@ const DAYS_CONFIG : IDay[]= [
       audition : '310'
     },
   ],
-  color : '#613157'
+  color: COLORS_CONFIG.dayPassiveHeader 
+
  },
 
    {
@@ -146,7 +146,7 @@ const DAYS_CONFIG : IDay[]= [
       teacherIF : 'Надежда Ивановна-Владислав Игоревич',
       audition : '323'
     },
-     ...(!isEvenNumber ? [ {
+     ...(!isEvenWeek ? [ {
       name : 'КПиЯП',
       timeDuration : '18:15-19:55',
       teacher : 'Янович Н.И.-Марков В.И.' ,
@@ -157,7 +157,8 @@ const DAYS_CONFIG : IDay[]= [
 
    
   ],
-  color : '#613157'
+  color: COLORS_CONFIG.dayPassiveHeader 
+
  },
 
  {
@@ -184,19 +185,20 @@ const DAYS_CONFIG : IDay[]= [
       teacherIF : 'Дарья Владимировна',
       audition : '309'
     },
-     isEvenNumber ? {
+     isEvenWeek ? {  name : 'История',
+      timeDuration : '18:15-19:55',
+      teacher : 'Ведерникова Л.Э.' ,
+      teacherIF : 'Людмила Эдуардовна',
+      audition : '310'
+    } : {
       name : 'РиСБД',
       timeDuration : '16:20-18:00',
       teacher : 'Ерёменко Д.В.',
       teacherIF : 'Дарья Владимировна',
       audition : '309'
-    } : {  name : 'История',
-      timeDuration : '18:15-19:55',
-      teacher : 'Ведерникова Л.Э.' ,
-      teacherIF : 'Людмила Эдуардовна',
-      audition : '310'
     }  ],
-  color : '#af2266'
+  color: COLORS_CONFIG.dayPassiveHeader 
+
  },
  
  {
@@ -217,15 +219,21 @@ const DAYS_CONFIG : IDay[]= [
       audition : '310'
     },
   ],
-  color : '#613157'
+  color: COLORS_CONFIG.dayPassiveHeader 
+
  },
 
 ] as const
 
-//add day duration
-DAYS_CONFIG.forEach(el => {
-  el.duration = el.lectures[0].timeDuration.split('-')[0] + '-' + el.lectures[el.lectures.length - 1].timeDuration.split('-')[1]
+ 
+DAYS_CONFIG.forEach((el, i) => {
+  //add day duration
+  el.duration = el.lectures[0].timeDuration.split('-')[0] + '-' + el.lectures[el.lectures.length - 1].timeDuration.split('-')[1];
+
+  //add colors
+ if(i === getCurrentDay(currentDate))  el.color =  COLORS_CONFIG.dayActiveHeader 
 })
+
 
 export default DAYS_CONFIG;
 
