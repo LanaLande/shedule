@@ -1,6 +1,6 @@
-import { COLORS_CONFIG } from "./colors.config"
+import { COLORS_CONFIG } from "../colors/colors.config"
 import { getCurrentDay } from "./helpers/get-current-day"
-import { currentDate, isEvenWeek } from "./time.config"
+import { currentDate, isEvenWeek } from "../time/time.config"
 
 
  export interface ILecture {
@@ -16,6 +16,7 @@ export interface IDay {
   duration?: string
   lectures : ILecture[]
   color : string
+  isCurrent? : boolean
 }
 
 const DAYS_CONFIG : IDay[]= [
@@ -231,10 +232,32 @@ DAYS_CONFIG.forEach((el, i) => {
   el.duration = el.lectures[0].timeDuration.split('-')[0] + '-' + el.lectures[el.lectures.length - 1].timeDuration.split('-')[1];
 
   //add colors
- if(i === getCurrentDay(currentDate))  el.color =  COLORS_CONFIG.dayActiveHeader 
+ if(i === getCurrentDay(currentDate)) { 
+    el.isCurrent = true 
+    el.color =  COLORS_CONFIG.dayActiveHeader
+  }
+
+
 })
 
 
 export default DAYS_CONFIG;
 
 
+
+// const date1 = new Date(`March 1, 1 ${currentLectureTime}`);
+// const date2 = currentDate;
+
+
+// const hours1 = date1.getHours();
+// const hours2 = date2.getHours();
+
+// const minutes1 = date1.getMinutes();
+// const minutes2 = date2.getMinutes();
+
+// if(date2.getHours() - date1.getHours() == 0){
+//   return minutes2 - minutes1 ) >= 0)
+// }
+// else{
+//   return ((date2.getHours() - date1.getHours()) >= 0);
+// }

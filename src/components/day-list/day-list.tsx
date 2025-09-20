@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Grid";
 import { DayItem } from "./day-item";
-import DAYS_CONFIG, { type IDay } from "../../config/days.config";
+import DAYS_CONFIG, { type IDay } from "../../config/days/days.config";
 import clsx from "clsx";
 
 

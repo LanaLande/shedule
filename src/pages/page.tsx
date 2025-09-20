@@ -4,17 +4,19 @@ import { LecturesModal } from "../components/modals/lectures-modal";
 import Balatro from "../shared/bg";
 import { useState } from "react";
 import { useDisclosure } from "@heroui/react";
-import type { IDay, ILecture } from "../config/days.config";
-import DAYS_CONFIG from "../config/days.config";
+import DAYS_CONFIG, { type IDay, type ILecture } from "../config/days/days.config";
 
 export function Page() {
   const {isOpen, onOpen, onClose} = useDisclosure();
   let [currentDayName, setCurrentDayName] = useState<string>(DAYS_CONFIG[0].name);
   let [currentLectures, setCurrentLectures] = useState<ILecture[]>(DAYS_CONFIG[0].lectures);
+  let [isCurrentDay, setIsCurrentDay] = useState<boolean | undefined>(undefined);
+
 
   function handleDayClick(day: IDay) {
     setCurrentDayName(day.name)
     setCurrentLectures(day.lectures)
+    setIsCurrentDay(day.isCurrent)
     onOpen()
   }
 
@@ -30,7 +32,7 @@ export function Page() {
           <FeaturesBar className="h-full w-[100px]"/>
         </div>
       </div>
-      <LecturesModal currentLectures={currentLectures} currentDayName={currentDayName} isOpen={isOpen} onClose={onClose} />
+      <LecturesModal currentLectures={currentLectures} currentDayName={currentDayName} isOpen={isOpen} onClose={onClose} isCurrentDay={isCurrentDay}/>
     </>
   )
 }

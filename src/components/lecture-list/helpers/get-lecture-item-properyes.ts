@@ -1,4 +1,4 @@
-import type { ILecture } from "../../../config/days.config";
+import type { ILecture } from "../../../config/days/days.config";
 
 export function getLectureItemPropertyes ({isPhone, lecture}:{isPhone : boolean,  lecture: ILecture}){
 

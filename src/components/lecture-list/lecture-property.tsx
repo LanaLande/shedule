@@ -1,7 +1,15 @@
 import Grid from "@mui/material/Grid";
+import clsx from "clsx";
 
-export function LectureProperty ({property, size }:{property : string, size  : number}) {
+interface IProps {
+   property : string
+   size  : number
+   isDisable: boolean
+
+}
+
+export function LectureProperty ({property, size, isDisable }: IProps) {
     return (
-       <Grid size={size} className="bg-[#000000] px-5 py-3 rounded-2xl flex items-center justify-center">{property}</Grid>
+       <Grid size={size} className={clsx("bg-[#00000020] px-5 py-3 rounded-2xl flex items-center justify-center", isDisable && 'opacity-30')}>{property}</Grid>
     )
   }

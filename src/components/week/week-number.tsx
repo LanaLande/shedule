@@ -1,4 +1,4 @@
-import { isEvenWeek } from "../../config/time.config";
+import { isEvenWeek } from "../../config/time/time.config";
 
 export function WeekNumber(){
   
