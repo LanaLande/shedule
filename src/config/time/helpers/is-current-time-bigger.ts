@@ -1,4 +1,4 @@
-import { currentDate } from "../time.config";
+import { currentDate } from "../../day/day.config";
 
 export function isCurrentTimeBigger (currentLectureTime : string ) : boolean {
 

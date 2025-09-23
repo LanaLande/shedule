@@ -1,6 +1,6 @@
 import { Modal, ModalBody, ModalContent, ModalHeader } from "@heroui/modal";
-import type { ILecture } from "../../config/days/days.config";
 import { LectureList } from "../lecture-list/lecture-list";
+import type { ILecture } from "../../config/shedule/interfaces/shedule.interface";
 
 interface IProps {
   currentDayName?: string;

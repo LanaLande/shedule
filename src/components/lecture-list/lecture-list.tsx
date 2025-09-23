@@ -1,7 +1,7 @@
-import type { ILecture } from "../../config/days/days.config"
 import clsx from "clsx"
 import { LectureItem } from "./lecture-item"
 import { isCurrentTimeBigger } from "../../config/time/helpers/is-current-time-bigger"
+import type { ILecture } from "../../config/shedule/interfaces/shedule.interface"
 
 interface IProps {
   lectures : ILecture[]

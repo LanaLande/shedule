@@ -1,4 +1,4 @@
-import type { ILecture } from "../../../config/days/days.config";
+import type { ILecture } from "../../../config/shedule/interfaces/shedule.interface";
 
 export function getLectureItemPropertyes ({isPhone, lecture}:{isPhone : boolean,  lecture: ILecture}){
 

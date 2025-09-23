@@ -4,22 +4,32 @@ import { LecturesModal } from "../components/modals/lectures-modal";
 import Balatro from "../shared/bg";
 import { useState } from "react";
 import { useDisclosure } from "@heroui/react";
-import DAYS_CONFIG, { type IDay, type ILecture } from "../config/days/days.config";
+import type { ILecture, IDay } from "../config/shedule/interfaces/shedule.interface";
+import SHEDULE_CONFIG from "../config/shedule/shedule.config";
 
 export function Page() {
   const {isOpen, onOpen, onClose} = useDisclosure();
-  let [currentDayName, setCurrentDayName] = useState<string>(DAYS_CONFIG[0].name);
-  let [currentLectures, setCurrentLectures] = useState<ILecture[]>(DAYS_CONFIG[0].lectures);
-  let [isCurrentDay, setIsCurrentDay] = useState<boolean | undefined>(undefined);
+
+  const [clickedDayData, setClickedDayData] = useState<
+  {
+    currentDayName : string
+    currentLectures : ILecture[]
+    isCurrentDay? : boolean
+  }>
+  (
+    {
+      currentDayName : SHEDULE_CONFIG[0].name,
+      currentLectures : SHEDULE_CONFIG[0].lectures
+    });
+
 
 
   function handleDayClick(day: IDay) {
-    setCurrentDayName(day.name)
-    setCurrentLectures(day.lectures)
-    setIsCurrentDay(day.isCurrent)
+    setClickedDayData({currentDayName : day.name,  isCurrentDay : day.isCurrent, currentLectures: day.lectures})
+    // setClickedDayData(prev => ({...prev , currentDayName : day.name,}))
+
     onOpen()
   }
-
 
   return (
     <>
@@ -32,7 +42,7 @@ export function Page() {
           <FeaturesBar className="h-full w-[100px]"/>
         </div>
       </div>
-      <LecturesModal currentLectures={currentLectures} currentDayName={currentDayName} isOpen={isOpen} onClose={onClose} isCurrentDay={isCurrentDay}/>
+      <LecturesModal currentLectures={clickedDayData.currentLectures} currentDayName={clickedDayData.currentDayName} isOpen={isOpen} onClose={onClose} isCurrentDay={clickedDayData.isCurrentDay}/>
     </>
   )
 }

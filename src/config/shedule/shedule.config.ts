@@ -1,25 +1,12 @@
 import { COLORS_CONFIG } from "../colors/colors.config"
+import { currentDate } from "../day/day.config"
+import { isEvenWeek } from "../time/time.config"
 import { getCurrentDay } from "./helpers/get-current-day"
-import { currentDate, isEvenWeek } from "../time/time.config"
+import type { IDay, ILecture } from "./interfaces/shedule.interface"
 
 
- export interface ILecture {
-  name : "Физра" | "СиС" | "Англ яз" | "КПиЯП"| "Физика"| "История"| "РиСБД"
-  timeDuration : "8:00-9:40" | "9:55-11:35" | "12:15-13:55" | "14:10-15:50" | "16:20-18:00" | "18:15-19:55" 
-  teacher : "Прохорчук А.В." | "Мороз Л.М." | "Ханько А.В." | "Янович Н.И.-Марков В.И." | "Кривицкий С.В.-Праволоцкий А.Н." | "Ерёменко Д.В." | "Ведерникова Л.Э."
-  teacherIF : "Анна Владимировна" | "Лариса Михайловна" | "Андрей Викторович" | "Надежда Ивановна-Владислав Игоревич" | "Сергей Валентинович-Алексей Николаевич" | "Дарья Владимировна" | "Людмила Эдуардовна"
-  audition : "213" | "216" | "314" | "310" | "323" | "Спортзал" | "309" 
-}
 
-export interface IDay {
-  name : 'Понедельник' | 'Вторник' | 'Среда' | 'Четверг' | 'Пятница' | 'Суббота'
-  duration?: string
-  lectures : ILecture[]
-  color : string
-  isCurrent? : boolean
-}
-
-const DAYS_CONFIG : IDay[]= [
+const SHEDULE_CONFIG : IDay[]= [
  {
   name: 'Понедельник',
   lectures : [ 
@@ -227,7 +214,7 @@ const DAYS_CONFIG : IDay[]= [
 ] as const
 
  
-DAYS_CONFIG.forEach((el, i) => {
+SHEDULE_CONFIG.forEach((el, i) => {
   //add day duration
   el.duration = el.lectures[0].timeDuration.split('-')[0] + '-' + el.lectures[el.lectures.length - 1].timeDuration.split('-')[1];
 
@@ -241,23 +228,6 @@ DAYS_CONFIG.forEach((el, i) => {
 })
 
 
-export default DAYS_CONFIG;
+export default SHEDULE_CONFIG;
 
 
-
-// const date1 = new Date(`March 1, 1 ${currentLectureTime}`);
-// const date2 = currentDate;
-
-
-// const hours1 = date1.getHours();
-// const hours2 = date2.getHours();
-
-// const minutes1 = date1.getMinutes();
-// const minutes2 = date2.getMinutes();
-
-// if(date2.getHours() - date1.getHours() == 0){
-//   return minutes2 - minutes1 ) >= 0)
-// }
-// else{
-//   return ((date2.getHours() - date1.getHours()) >= 0);
-// }

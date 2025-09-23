@@ -1,7 +1,7 @@
 import Grid from "@mui/material/Grid";
 import { LectureProperty } from "./lecture-property";
-import type { ILecture } from "../../config/days/days.config";
 import { getLectureItemPropertyes } from "./helpers/get-lecture-item-properyes";
+import type { ILecture } from "../../config/shedule/interfaces/shedule.interface";
 
 interface IProps {
   lecture : ILecture
@@ -16,7 +16,7 @@ export function LectureItem ({isDisable, isPhone, lecture} : IProps){
   return(
      <Grid container spacing={0.5}   className=" flex gap-10  ">
         {lectureItemPropertyes.map(LecturePropertyProps => 
-          <LectureProperty {...LecturePropertyProps} isDisable={isDisable}/>
+          <LectureProperty key={LecturePropertyProps.property} {...LecturePropertyProps} isDisable={isDisable}/>
         )}
       </Grid>
   )
