@@ -5,20 +5,18 @@ import type { ILecture } from "../../config/shedule/interfaces/shedule.interface
 
 interface IProps {
   lecture : ILecture
-  isPhone: boolean
   isDisable : boolean
 }
-export function LectureItem ({isDisable, isPhone, lecture} : IProps){
+export function LectureItem ({isDisable, lecture} : IProps){
 
   
-  const lectureItemPropertyes = getLectureItemPropertyes({isPhone,lecture});
+  const lectureItemPropertyes = getLectureItemPropertyes({lecture,isDisable});
 
   return(
-     <Grid container spacing={0.5}   className=" flex gap-10  ">
+     <Grid container spacing={0.5}   className="flex gap-10">
         {lectureItemPropertyes.map(LecturePropertyProps => 
-          <LectureProperty key={LecturePropertyProps.property} {...LecturePropertyProps} isDisable={isDisable}/>
+          <LectureProperty key={LecturePropertyProps.property} {...LecturePropertyProps}/>
         )}
       </Grid>
   )
-  
 }

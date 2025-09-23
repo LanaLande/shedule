@@ -11,8 +11,6 @@ interface IProps {
 
 
 export function LectureList ({lectures, isCurrentDay, className } : IProps){
-  
-  const isPhone = window.innerWidth < 740
 
 
   return(
@@ -21,7 +19,7 @@ export function LectureList ({lectures, isCurrentDay, className } : IProps){
       {
         const isPast = isCurrentTimeBigger(lecture.timeDuration.split("-")[1]);
 
-        return <LectureItem isDisable={isPast || !isCurrentDay}  key={lecture.timeDuration} lecture={lecture} isPhone={isPhone}/>
+        return <LectureItem isDisable={isPast || !isCurrentDay}  key={lecture.timeDuration} lecture={lecture}/>
        }
       )}
       

@@ -3,9 +3,8 @@ import clsx from "clsx";
 
 interface IProps {
    property : string
-   size  : number
+   size ?: {[key in 'xs' | 'sm' | 'md' | 'lg' | 'xl']?: number }
    isDisable: boolean
-
 }
 
 export function LectureProperty ({property, size, isDisable }: IProps) {
