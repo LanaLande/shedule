@@ -16,7 +16,7 @@ export default defineConfig({
         name : "Lana's Lande shedule",
         short_name : "Shedule",
         description : 'Ничего в голову не приходит',
-        theme_color : '#3C315A',
+        theme_color : '#000000',
         display : 'standalone',
         icons : [
           {

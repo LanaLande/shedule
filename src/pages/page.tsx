@@ -33,7 +33,9 @@ export function Page() {
   return (
     <>
       <div className="w-screen h-screen text-[#f2f2f2] flex overflow-hidden relative">
-        <Bg className="absolute" mouseInteraction={false} color1="#553a7e" color2="#4a2d62" color3="#162325"/>
+        <Bg className="absolute" hueShift={323} speed={3}
+          // color1="#553a7e" color2="#4a2d62" color3="#162325"
+        />
         <div className="w-full h-full flex flex-col-reverse sm:flex-row justify-center z-1" >
 
           <main className="h-screen w-full p-5">
