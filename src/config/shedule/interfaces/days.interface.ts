@@ -21,5 +21,5 @@ export interface IDay {
   duration?: string
   events : IDayEvent[]
   color : string
-  isCurrent? : boolean
+  isCurrent : boolean
 }

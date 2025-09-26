@@ -16,7 +16,7 @@ const SHEDULE_CONFIG : IDay[]= [
       teacher : 'Прохорчук А.В.',
       teacherIF : 'Анна Владимировна',
       audition : '213',
-      type: 'lecture'
+      type: 'lecture',
     }, 
 
     {
@@ -52,7 +52,9 @@ const SHEDULE_CONFIG : IDay[]= [
 
     },
   ],
-  color: COLORS_CONFIG.dayPassiveHeader 
+  color: COLORS_CONFIG.dayPassiveHeader ,
+  isCurrent : false
+
  },
    
   {
@@ -106,7 +108,8 @@ const SHEDULE_CONFIG : IDay[]= [
     ...(isEvenWeek ? [
       {
       timeDuration : '15:50-16:20',
-      type: 'lunch'
+      type: 'lunch',
+      name: 'Обед',
     }, 
     {
       name : 'Физра',
@@ -117,7 +120,8 @@ const SHEDULE_CONFIG : IDay[]= [
       type: 'lecture'
     }   ] as IDayEvent[]: [])
   ],
-  color: COLORS_CONFIG.dayPassiveHeader 
+  color: COLORS_CONFIG.dayPassiveHeader,
+  isCurrent : false
 
  },
 
@@ -158,7 +162,9 @@ const SHEDULE_CONFIG : IDay[]= [
 
     },
   ],
-  color: COLORS_CONFIG.dayPassiveHeader 
+  color: COLORS_CONFIG.dayPassiveHeader,
+  isCurrent : false
+
 
  },
 
@@ -200,7 +206,9 @@ const SHEDULE_CONFIG : IDay[]= [
 
    
   ],
-  color: COLORS_CONFIG.dayPassiveHeader 
+  color: COLORS_CONFIG.dayPassiveHeader,
+  isCurrent : false
+
 
  },
 
@@ -262,7 +270,9 @@ const SHEDULE_CONFIG : IDay[]= [
       type: 'lecture'
 
     }  ],
-  color: COLORS_CONFIG.dayPassiveHeader 
+  color: COLORS_CONFIG.dayPassiveHeader,
+  isCurrent : false
+
 
  },
  
@@ -288,7 +298,9 @@ const SHEDULE_CONFIG : IDay[]= [
 
     },
   ],
-  color: COLORS_CONFIG.dayPassiveHeader 
+  color: COLORS_CONFIG.dayPassiveHeader,
+  isCurrent : false
+
 
  },
 

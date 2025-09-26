@@ -1,20 +1,22 @@
 import { currentDate } from "../../day/day.config";
 
-export function isCurrentTimeBigger (currentLectureTime : string ) : boolean {
 
-  const lectureDate = new Date(`March 1, 1 ${currentLectureTime}`);
 
-  const lectureHours = lectureDate.getHours();
+export function isCurrentTimeBigger (currentEventTimeEnd : string ) : boolean {
+
+  const eventDate = new Date(`March 1, 1 ${currentEventTimeEnd}`);
+
+  const eventHours = eventDate.getHours();
   const currentHours = currentDate.getHours();
 
-  const lectureMinutes = lectureDate.getMinutes();
+  const eventMinutes = eventDate.getMinutes();
   const currentMinutes = currentDate.getMinutes();
 
-  if(currentHours - lectureHours == 0){
-    return currentMinutes - lectureMinutes >= 0
+  if(currentHours - eventHours == 0){
+    return currentMinutes - eventMinutes >= 0
   }
   else{
-    return currentHours - lectureHours >= 0;
+    return currentHours - eventHours >= 0;
   }
 }
 

@@ -14,12 +14,13 @@ export function Page() {
   {
     currentDayName : string
     currentEvents : IDayEvent[]
-    isCurrentDay? : boolean
+    isCurrentDay : boolean
   }>
   (
     {
       currentDayName : DAYS_CONFIG[0].name,
-      currentEvents : DAYS_CONFIG[0].events
+      currentEvents : DAYS_CONFIG[0].events,
+      isCurrentDay : false
     });
 
 

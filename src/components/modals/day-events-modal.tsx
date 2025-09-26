@@ -7,7 +7,7 @@ interface IProps {
   currentEvents: IDayEvent[];
   isOpen: boolean;
   onClose: () => void
-  isCurrentDay? : boolean
+  isCurrentDay : boolean
 }
 
 export function DayEventsModal ({currentDayName, currentEvents: currentEvents,
