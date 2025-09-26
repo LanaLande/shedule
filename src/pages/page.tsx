@@ -1,11 +1,11 @@
 import { DayList } from "../components/day-list/day-list";
 import { FeaturesBar } from "../components/featares-bar/features-bar";
-import { LecturesModal } from "../components/modals/lectures-modal";
+import { DayEventsModal } from "../components/modals/day-events-modal";
 import Bg from "../shared/bg";
 import { useState } from "react";
 import { useDisclosure } from "@heroui/react";
-import type { ILecture, IDay } from "../config/shedule/interfaces/shedule.interface";
-import SHEDULE_CONFIG from "../config/shedule/shedule.config";
+import DAYS_CONFIG from "../config/shedule/shedule.config";
+import type { IDay, IDayEvent } from "../config/shedule/interfaces/days.interface";
 
 export function Page() {
   const {isOpen, onOpen, onClose} = useDisclosure();
@@ -13,18 +13,18 @@ export function Page() {
   const [clickedDayData, setClickedDayData] = useState<
   {
     currentDayName : string
-    currentLectures : ILecture[]
+    currentEvents : IDayEvent[]
     isCurrentDay? : boolean
   }>
   (
     {
-      currentDayName : SHEDULE_CONFIG[0].name,
-      currentLectures : SHEDULE_CONFIG[0].lectures
+      currentDayName : DAYS_CONFIG[0].name,
+      currentEvents : DAYS_CONFIG[0].events
     });
 
 
  function handleDayClick(day: IDay) {
-    setClickedDayData({currentDayName : day.name,  isCurrentDay : day.isCurrent, currentLectures: day.lectures})
+    setClickedDayData({currentDayName : day.name,  isCurrentDay : day.isCurrent, currentEvents: day.events})
     // setClickedDayData(prev => ({...prev , currentDayName : day.name,}))
     onOpen()
   }
@@ -42,7 +42,7 @@ export function Page() {
 
         </div>
       </div>
-      <LecturesModal currentLectures={clickedDayData.currentLectures} currentDayName={clickedDayData.currentDayName} isOpen={isOpen} onClose={onClose} isCurrentDay={clickedDayData.isCurrentDay}/>
+      <DayEventsModal currentEvents={clickedDayData.currentEvents} currentDayName={clickedDayData.currentDayName} isOpen={isOpen} onClose={onClose} isCurrentDay={clickedDayData.isCurrentDay}/>
     </>
   )
 }

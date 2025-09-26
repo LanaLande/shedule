@@ -1,16 +1,16 @@
 import { Modal, ModalBody, ModalContent, ModalHeader } from "@heroui/modal";
-import { LectureList } from "../lecture-list/lecture-list";
-import type { ILecture } from "../../config/shedule/interfaces/shedule.interface";
+import type { IDayEvent } from "../../config/shedule/interfaces/days.interface";
+import { DayEventList } from "../day-events-list/day-event-list";
 
 interface IProps {
   currentDayName?: string;
-  currentLectures: ILecture[];
+  currentEvents: IDayEvent[];
   isOpen: boolean;
   onClose: () => void
   isCurrentDay? : boolean
 }
 
-export function LecturesModal ({currentDayName, currentLectures,
+export function DayEventsModal ({currentDayName, currentEvents: currentEvents,
   isCurrentDay, isOpen, onClose} : IProps){
 
   return (
@@ -18,7 +18,7 @@ export function LecturesModal ({currentDayName, currentLectures,
         <ModalContent>
               <ModalHeader className="flex  flex-col gap-1">{currentDayName}</ModalHeader>
               <ModalBody >
-                <LectureList lectures={currentLectures} isCurrentDay={isCurrentDay} />
+                <DayEventList events={currentEvents} isCurrentDay={isCurrentDay} />
               </ModalBody>
         </ModalContent>
       </Modal>
