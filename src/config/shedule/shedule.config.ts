@@ -1,7 +1,4 @@
-import { COLORS_CONFIG } from "../colors/colors.config"
-import { currentDate } from "../day/day.config"
 import { isEvenWeek } from "../time/time.config"
-import { getCurrentDay } from "./helpers/get-current-day"
 import type { IDay, IDayEvent, ILecture } from "./interfaces/days.interface"
 
 
@@ -52,8 +49,6 @@ const SHEDULE_CONFIG : IDay[]= [
 
     },
   ],
-  color: COLORS_CONFIG.dayPassiveHeader ,
-  isCurrent : false
 
  },
    
@@ -120,8 +115,6 @@ const SHEDULE_CONFIG : IDay[]= [
       type: 'lecture'
     }   ] as IDayEvent[]: [])
   ],
-  color: COLORS_CONFIG.dayPassiveHeader,
-  isCurrent : false
 
  },
 
@@ -162,8 +155,6 @@ const SHEDULE_CONFIG : IDay[]= [
 
     },
   ],
-  color: COLORS_CONFIG.dayPassiveHeader,
-  isCurrent : false
 
 
  },
@@ -206,8 +197,6 @@ const SHEDULE_CONFIG : IDay[]= [
 
    
   ],
-  color: COLORS_CONFIG.dayPassiveHeader,
-  isCurrent : false
 
 
  },
@@ -270,8 +259,6 @@ const SHEDULE_CONFIG : IDay[]= [
       type: 'lecture'
 
     }  ],
-  color: COLORS_CONFIG.dayPassiveHeader,
-  isCurrent : false
 
 
  },
@@ -298,32 +285,19 @@ const SHEDULE_CONFIG : IDay[]= [
 
     },
   ],
-  color: COLORS_CONFIG.dayPassiveHeader,
-  isCurrent : false
-
-
  },
 
 ] as const
 
  
-SHEDULE_CONFIG.forEach((el, i) => {
+SHEDULE_CONFIG.forEach(el => {
   //add day duration
-
   const firstEvent = el.events[0]
   const lastEvent = el.events[el.events.length - 1]
 
   if(firstEvent.type === 'lecture' && lastEvent.type === 'lecture') {
     el.duration = firstEvent.timeDuration.split('-')[0] + '-' + lastEvent.timeDuration.split('-')[1];
   }
-
-  //add active day header color
- if(i === getCurrentDay(currentDate)) { 
-    el.isCurrent = true 
-    el.color =  COLORS_CONFIG.dayActiveHeader
-  }
-
-
 })
 
 

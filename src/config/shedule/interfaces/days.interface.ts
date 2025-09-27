@@ -7,6 +7,8 @@ export interface ILecture {
   type: 'lecture'
 }
 
+// need refactoring about teacher names 
+
 
 interface ILunch{
   timeDuration : '11:35-12:15' | '15:50-16:20'
@@ -20,6 +22,4 @@ export interface IDay {
   name : 'Понедельник' | 'Вторник' | 'Среда' | 'Четверг' | 'Пятница' | 'Суббота'
   duration?: string
   events : IDayEvent[]
-  color : string
-  isCurrent : boolean
 }
