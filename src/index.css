@@ -18,3 +18,23 @@ html{
   -webkit-user-select: none;
   -o-user-select: none;
 }
+
+/* crollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px; 
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff47; 
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b0675; 
+}

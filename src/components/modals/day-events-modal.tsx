@@ -14,7 +14,7 @@ export function DayEventsModal ({currentDayName, currentEvents: currentEvents,
   isCurrentDay, isOpen, onClose} : IProps){
 
   return (
-    <Modal size="5xl" backdrop='blur' isOpen={isOpen} onClose={onClose} classNames={{base : 'bg-[#431757] text-[#ffffff] pb-7 ', wrapper: "overflow-hidden items-center", body: "flex items-center"}}>
+    <Modal size="5xl" backdrop='blur' isOpen={isOpen} onClose={onClose} scrollBehavior="inside" classNames={{base : 'bg-[#431757] text-[#ffffff] pb-7 ', wrapper: " items-center", body: "flex items-center", }}>
         <ModalContent>
               <ModalHeader className="flex  flex-col gap-1">{currentDayName}</ModalHeader>
               <ModalBody >
