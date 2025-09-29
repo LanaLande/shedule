@@ -9,7 +9,7 @@ export function Page() {
     <>
       <div className="w-screen h-screen text-[#f2f2f2] flex overflow-hidden relative">
         <Bg className="absolute" hueShift={323} speed={3}/>
-        <div className="w-full h-full flex flex-col-reverse sm:flex-row justify-center z-1" >
+        <div  className="w-full h-full flex flex-col-reverse sm:flex-row justify-center z-1" >
 
           <main className="h-screen w-full p-5">
             <DayList />

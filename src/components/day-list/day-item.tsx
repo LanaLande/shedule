@@ -10,6 +10,7 @@ interface IProps {
 export function DayItem({dayName,isCurrent,dayDuration, onClick} : HTMLAttributes<HTMLDivElement> &  IProps){
   if(!dayDuration) return <></>
   
+
   const [start, end] =  dayDuration.split('-')
 
   return(

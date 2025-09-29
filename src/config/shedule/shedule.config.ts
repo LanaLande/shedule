@@ -10,8 +10,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'Англ яз',
       timeDuration : '12:15-13:55',
-      teacher : 'Прохорчук А.В.',
-      teacherIF : 'Анна Владимировна',
+      teachers : ['Прохорчук Анна Владимировна'],
       audition : '213',
       type: 'lecture',
     }, 
@@ -19,8 +18,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'Физика',
       timeDuration : '14:10-15:50',
-      teacher : 'Мороз Л.М.',
-      teacherIF : 'Лариса Михайловна',
+      teachers : ['Мороз Лариса Михайловна'],
       audition : '216',
       type: 'lecture'
 
@@ -33,8 +31,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'СиС',
       timeDuration : '16:20-18:00',
-      teacher : 'Ханько А.В.',
-      teacherIF : 'Андрей Викторович',
+      teachers : ['Ханько Андрей Викторович'],
       audition : '314',
       type: 'lecture'
 
@@ -42,8 +39,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'СиС',
       timeDuration : '18:15-19:55',
-      teacher : 'Ханько А.В.',
-      teacherIF : 'Андрей Викторович',
+      teachers : ['Ханько Андрей Викторович'],
       audition : '314',
       type: 'lecture'
 
@@ -60,8 +56,7 @@ const SHEDULE_CONFIG : IDay[]= [
    {
       name : 'Англ яз',
       timeDuration : '9:55-11:35',
-      teacher : 'Прохорчук А.В.',
-      teacherIF : 'Анна Владимировна',
+      teachers : ['Прохорчук Анна Владимировна'],
       audition : '213',
       type: 'lecture'
 
@@ -70,8 +65,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'Физика',
       timeDuration : '9:55-11:35',
-      teacher : 'Мороз Л.М.',
-      teacherIF : 'Лариса Михайловна',
+      teachers : ['Мороз Лариса Михайловна'],
       audition : '310',
       type: 'lecture'
 
@@ -85,8 +79,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'КПиЯП',
       timeDuration : '12:15-13:55',
-      teacher : 'Янович Н.И.-Марков В.И.' ,
-      teacherIF : 'Надежда Ивановна-Владислав Игоревич',
+      teachers : ['Янович Надежда Ивановна', 'Марков Владислав Игоревич'] ,
       audition : '323',
       type: 'lecture'
 
@@ -94,8 +87,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'КПиЯП',
       timeDuration : '14:10-15:50',
-      teacher : 'Янович Н.И.-Марков В.И.' ,
-      teacherIF : 'Надежда Ивановна-Владислав Игоревич',
+      teachers : ['Янович Надежда Ивановна', 'Марков Владислав Игоревич'] ,
       audition : '323',
       type: 'lecture'
     },
@@ -109,8 +101,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'Физра',
       timeDuration : '16:20-18:00',
-      teacher : 'Кривицкий С.В.-Праволоцкий А.Н.',
-      teacherIF : 'Сергей Валентинович-Алексей Николаевич',
+      teachers: ['Кривицкий Сергей Валентинович', 'Праволоцкий Алексей Николаевич'],
       audition : 'Спортзал',
       type: 'lecture'
     }   ] as IDayEvent[]: [])
@@ -124,8 +115,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'РиСБД',
       timeDuration : '12:15-13:55',
-      teacher : 'Ерёменко Д.В.',
-      teacherIF : 'Дарья Владимировна',
+      teachers: ['Ерёменко Дарья Владимировна'],
       audition : '309',
       type: 'lecture'
 
@@ -133,8 +123,7 @@ const SHEDULE_CONFIG : IDay[]= [
    {
       name : 'РиСБД',
       timeDuration : '14:10-15:50',
-      teacher : 'Ерёменко Д.В.',
-      teacherIF : 'Дарья Владимировна',
+      teachers: ['Ерёменко Дарья Владимировна'],
       audition : '309',
       type: 'lecture'
 
@@ -148,8 +137,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'История',
       timeDuration : '16:20-18:00',
-      teacher : 'Ведерникова Л.Э.' ,
-      teacherIF : 'Людмила Эдуардовна',
+      teachers : ['Ведерникова Людмила Эдуардовна'] ,
       audition : '310',
       type: 'lecture'
 
@@ -165,8 +153,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'Физра',
       timeDuration : '14:10-15:50',
-      teacher : 'Кривицкий С.В.-Праволоцкий А.Н.',
-      teacherIF : 'Сергей Валентинович-Алексей Николаевич',
+      teachers: ['Кривицкий Сергей Валентинович', 'Праволоцкий Алексей Николаевич'],
       audition : 'Спортзал',
       type: 'lecture'
 
@@ -180,8 +167,7 @@ const SHEDULE_CONFIG : IDay[]= [
    {
       name : 'КПиЯП',
       timeDuration : '16:20-18:00',
-      teacher : 'Янович Н.И.-Марков В.И.' ,
-      teacherIF : 'Надежда Ивановна-Владислав Игоревич',
+      teachers : ['Янович Надежда Ивановна', 'Марков Владислав Игоревич'] ,
       audition : '323',
       type: 'lecture'
 
@@ -189,9 +175,9 @@ const SHEDULE_CONFIG : IDay[]= [
      ...(!isEvenWeek ? [ {
       name : 'КПиЯП',
       timeDuration : '18:15-19:55',
-      teacher : 'Янович Н.И.-Марков В.И.' ,
-      teacherIF : 'Надежда Ивановна-Владислав Игоревич',
-      audition : '323'
+      teachers : ['Янович Надежда Ивановна', 'Марков Владислав Игоревич'] ,
+      audition : '323',
+      type: 'lecture'
     } as ILecture ] : [])
 
 
@@ -207,8 +193,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'Физика',
       timeDuration : '9:55-11:35',
-      teacher : 'Мороз Л.М.',
-      teacherIF : 'Лариса Михайловна',
+      teachers : ['Мороз Лариса Михайловна'],
       audition : '216',
       type: 'lecture'
 
@@ -222,8 +207,7 @@ const SHEDULE_CONFIG : IDay[]= [
      {
       name : 'Англ яз',
       timeDuration : '12:15-13:55',
-      teacher : 'Прохорчук А.В.',
-      teacherIF : 'Анна Владимировна',
+      teachers : ['Прохорчук Анна Владимировна'],
       audition : '213',
       type: 'lecture'
 
@@ -231,8 +215,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'РиСБД',
       timeDuration : '14:10-15:50',
-      teacher : 'Ерёменко Д.В.',
-      teacherIF : 'Дарья Владимировна',
+      teachers: ['Ерёменко Дарья Владимировна'],
       audition : '309',
       type: 'lecture'
 
@@ -245,16 +228,14 @@ const SHEDULE_CONFIG : IDay[]= [
     },
      isEvenWeek ? {  name : 'История',
       timeDuration : '16:20-18:00',
-      teacher : 'Ведерникова Л.Э.' ,
-      teacherIF : 'Людмила Эдуардовна',
+      teachers : ['Ведерникова Людмила Эдуардовна'] ,
       audition : '310',
       type: 'lecture'
 
     } : {
       name : 'РиСБД',
       timeDuration : '16:20-18:00',
-      teacher : 'Ерёменко Д.В.',
-      teacherIF : 'Дарья Владимировна',
+      teachers : ['Ведерникова Людмила Эдуардовна'] ,
       audition : '309',
       type: 'lecture'
 
@@ -269,8 +250,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'Физика',
       timeDuration : '8:00-9:40',
-      teacher : 'Мороз Л.М.',
-      teacherIF : 'Лариса Михайловна',
+      teachers : ['Мороз Лариса Михайловна'],
       audition : '219',
       type: 'lecture'
 
@@ -278,8 +258,7 @@ const SHEDULE_CONFIG : IDay[]= [
     {
       name : 'История',
       timeDuration : '9:55-11:35',
-      teacher : 'Ведерникова Л.Э.' ,
-      teacherIF : 'Людмила Эдуардовна',
+      teachers : ['Ведерникова Людмила Эдуардовна'] ,
       audition : '310',
       type: 'lecture'
 
@@ -294,6 +273,7 @@ SHEDULE_CONFIG.forEach(el => {
   //add day duration
   const firstEvent = el.events[0]
   const lastEvent = el.events[el.events.length - 1]
+  console.log({el})
 
   if(firstEvent.type === 'lecture' && lastEvent.type === 'lecture') {
     el.duration = firstEvent.timeDuration.split('-')[0] + '-' + lastEvent.timeDuration.split('-')[1];

@@ -16,7 +16,7 @@ export function DayEventItem ({isDisable, event, isCurrentEvent} : IProps){
   return(
      <Grid container spacing={0.5}   className="flex gap-10">
         {plitkasProps.map(PlitkaProps => 
-          <Plitka key={PlitkaProps.property} {...PlitkaProps}/>
+          <Plitka key={String(PlitkaProps.property)} {...PlitkaProps}/>
         )}
       </Grid>
   )
