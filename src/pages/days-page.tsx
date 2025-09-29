@@ -3,7 +3,7 @@ import { FeaturesBar } from "../components/featares-bar/features-bar";
 import { DayEventsModal } from "../components/modals/day-events-modal";
 import Bg from "../shared/bg";
 
-export function Page() {
+export function DaysPage() {
 
   return (
     <>

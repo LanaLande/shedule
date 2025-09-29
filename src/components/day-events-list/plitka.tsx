@@ -33,7 +33,7 @@ export function Plitka ({property, size, isDisable, color }: IProps) {
                         backgroundColor: color,
                         flexDirection: "column", 
                      }}
-                     className={clsx(" px-5 py-3 rounded-2xl flex items-center justify-center", isDisable && 'opacity-40')}
+                     className={clsx(" px-1 py-3 rounded-2xl flex items-center justify-center", isDisable && 'opacity-40')}
                      >
                      { property.map(teacherName => <p>{shortName(teacherName)}</p>)}
                   </Grid>
@@ -70,7 +70,7 @@ export function Plitka ({property, size, isDisable, color }: IProps) {
                   flexDirection: "column", 
 
                }}
-               className={clsx(" px-5 py-3 rounded-2xl flex items-center justify-center", isDisable && 'opacity-40')}
+               className={clsx("px-1 py-3 rounded-2xl flex items-center justify-center", isDisable && 'opacity-40')}
                >
                  { property.map(teacherName => <p>{shortName(teacherName)}</p>)}
                </Grid>
@@ -85,7 +85,7 @@ export function Plitka ({property, size, isDisable, color }: IProps) {
          sx={{
             backgroundColor: color,
          }}
-         className={clsx(" px-5 py-3 rounded-2xl flex items-center justify-center", isDisable && 'opacity-40')}
+         className={clsx(" px-1 py-3 rounded-2xl flex items-center justify-center", isDisable && 'opacity-40')}
          >
             {property}
       </Grid>
