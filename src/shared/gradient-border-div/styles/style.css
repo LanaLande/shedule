@@ -1,0 +1,23 @@
+.gradient{
+  background: linear-gradient(var(--angle, 45deg), var(--gradientColors));
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+  animation-name: grad-anim;
+  --angle: 0deg;
+}
+
+@keyframes grad-anim{
+   0%{
+    --angle: 0deg;
+  }
+  100%{
+    --angle: 360deg;
+  }
+}
+
+@property --angle{
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}

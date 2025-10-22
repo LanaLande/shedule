@@ -16,6 +16,7 @@
     "@heroui/popover": "^2.3.26",
     "@heroui/react": "^2.8.4",
     "@heroui/tooltip": "^2.2.23",
+    "@mui/icons-material": "^7.3.4",
     "@mui/material": "^7.3.2",
     "@tailwindcss/vite": "^4.1.13",
     "clsx": "^2.1.1",

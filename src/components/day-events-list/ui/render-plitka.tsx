@@ -12,7 +12,7 @@ interface IRenderGridProps extends React.HTMLAttributes<HTMLDivElement> {
   color: string;
 }
 
-export const RenderGrid = forwardRef<HTMLDivElement, IRenderGridProps>(function GridWithoutForwardRef(
+export const RenderPlitka = forwardRef<HTMLDivElement, IRenderGridProps>(function GridWithoutForwardRef(
   { value, size, color, isDisable, handleTeacherNamesFunction, ...htmlDefaultProps },
   ref,
 ) {

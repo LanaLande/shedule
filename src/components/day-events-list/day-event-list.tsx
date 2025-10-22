@@ -1,24 +1,24 @@
 import clsx from 'clsx';
 import { DayEventItem } from './ui/day-event-item';
 import { useAtomValue } from 'jotai';
-import { currentDayEventsAtom, isCurrentDayAtom } from '../../app/store/jotai/atoms';
+import { selectedDayEventsAtom, isCurrentDayAtom } from '../../app/store/jotai/atoms';
 import { getDayEventItemProps } from './helpers/get-day-event-item-props';
 
 export function DayEventList({ className }: { className?: string }) {
-  const currentDayEvents = useAtomValue(currentDayEventsAtom);
+  const selectedDayEvents = useAtomValue(selectedDayEventsAtom);
   const isCurrentDay = useAtomValue(isCurrentDayAtom);
 
   return (
-    <div className={clsx('flex  flex-col gap-5 w-[90%] ', className)}>
-      {currentDayEvents.map((event) => {
+    <div className={clsx('flex  flex-col gap-5  ', className)}>
+      {selectedDayEvents.map((event) => {
         const { isPast, isCurrentEvent } = getDayEventItemProps(event.timeDuration);
 
         return (
           <DayEventItem
-            isDisable={isPast || !isCurrentDay}
-            isCurrentEvent={isCurrentEvent && isCurrentDay}
-            key={event.timeDuration}
+            isDisable={!isCurrentDay || isPast}
+            isCurrentEvent={isCurrentDay && isCurrentEvent}
             event={event}
+            key={event.timeDuration}
           />
         );
       })}

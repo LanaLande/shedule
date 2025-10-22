@@ -5,7 +5,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@heroui/popover';
 import { Tooltip } from '@heroui/tooltip';
 import { shortName } from '../../../shared/helpers/short-name';
 import { COLORS_CONFIG } from '../../../app/config/colors/colors.config';
-import { RenderGrid } from './render-grid';
+import { RenderPlitka } from './render-plitka';
 
 
 
@@ -29,11 +29,11 @@ export function Plitka(props: IProps) {
           placement="top"
           classNames={{
             content: clsx(COLORS_CONFIG.popUpWindowBgClassName, COLORS_CONFIG.popUpWindowTextClassName),
-            base: [COLORS_CONFIG.popUpWindowArrowClassName],
+            base: COLORS_CONFIG.popUpWindowArrowClassName,
           }}
         >
           <PopoverTrigger>
-            <RenderGrid {...props} handleTeacherNamesFunction={shortName} />
+            <RenderPlitka {...props} handleTeacherNamesFunction={shortName} />
           </PopoverTrigger>
           <PopoverContent>
             {value.map((name) => (
@@ -51,7 +51,7 @@ export function Plitka(props: IProps) {
           showArrow
           classNames={{
             content: clsx(COLORS_CONFIG.popUpWindowBgClassName, COLORS_CONFIG.popUpWindowTextClassName),
-            base: [COLORS_CONFIG.popUpWindowArrowClassName],
+            base: COLORS_CONFIG.popUpWindowArrowClassName,
           }}
           content={
             <div className="p-2 text-lg">
@@ -62,12 +62,12 @@ export function Plitka(props: IProps) {
           }
           placement="top"
         >
-          <RenderGrid {...props} handleTeacherNamesFunction={shortName} />
+          <RenderPlitka {...props} handleTeacherNamesFunction={shortName} />
         </Tooltip>
       );
     }
   } else {
     // if other values
-    return <RenderGrid {...props} />;
+    return <RenderPlitka {...props} />;
   }
 }

@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import { COLORS_CONFIG } from '../../app/config/colors/colors.config';
+import { COLORS_CONFIG, GRADIENT_COLORS_CONFIG } from '../../app/config/colors/colors.config';
 
 interface IProps {
   dayName: string;
@@ -10,23 +10,29 @@ interface IProps {
 export function DayItem({ dayName, isCurrent, dayDuration, onClick }: HTMLAttributes<HTMLDivElement> & IProps) {
   if (!dayDuration) return <></>;
 
-  const [start, end] = dayDuration.split('-');
-
   return (
-    <div onClick={onClick} className="hover:scale-105 transition-transform cursor-pointer unselectable">
-      <div
-        className="py-2 px-3 text-lg rounded-t-xl"
-        style={{
-          backgroundColor: isCurrent ? COLORS_CONFIG.dayActiveHeader : COLORS_CONFIG.dayPassiveHeader,
-        }}
-      >
-        {dayName}
-      </div>
-
-      <div className="py-2 px-3 bg-[#a95fad]  text-lg rounded-b-xl flex items-center justify-between">
-        <p>{start}</p>
-        <p> {end} </p>
+    <div
+      onClick={onClick}
+      className="w-full p-3 rounded-2xl flex justify-between border-[2px] hover:scale-102 transition-all cursor-pointer"
+      style={
+        isCurrent
+          ? {
+              background: `linear-gradient(to right, ${GRADIENT_COLORS_CONFIG.dayActiveBg.toString()})`,
+              borderWidth : 0,              
+            }
+          : {
+              background: COLORS_CONFIG.dayPassiveBg,
+              borderColor: COLORS_CONFIG.dayPassiveBorderColor,
+            }
+      }
+    >
+      <p>{dayName}</p>
+      <div className="flex gap-3">
+        <p>{dayDuration.split('-')[0]}</p>
+        <p>{dayDuration.split('-')[1]}</p>
       </div>
     </div>
   );
 }
+
+//  backgroundColor: isCurrent ? COLORS_CONFIG.dayActiveHeader : COLORS_CONFIG.dayPassiveHeader,

@@ -8,13 +8,13 @@ interface IProps {
   event: IDayEvent;
   isDisable: boolean;
 }
-export function DayEventItem({ isDisable, event, isCurrentEvent }: IProps) {
-  const plitkasProps = getPlitkasProps({ event, isDisable, isCurrentEvent });
+export function DayEventItem(props: IProps) {
+  const plitkasProps = getPlitkasProps(props);
 
   return (
     <Grid container spacing={0.5} className="flex gap-10">
-      {plitkasProps.map((PlitkaProps) => (
-        <Plitka key={String(PlitkaProps.value)} {...PlitkaProps} />
+      {plitkasProps.map((plitkaProps) => (
+        <Plitka key={String(plitkaProps.value)} {...plitkaProps}/>
       ))}
     </Grid>
   );

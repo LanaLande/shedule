@@ -1,23 +1,23 @@
 import type { IDay } from '../../../app/config/shedule/interfaces/days.interface';
 import { useSetAtom } from 'jotai';
 import {
-  currentDayEventsAtom,
-  currentDayNameAtom,
+  selectedDayEventsAtom,
+  selectedDayNameAtom,
   isCurrentDayAtom,
   isDayEventsModalOpenAtom,
 } from '../../../app/store/jotai/atoms';
 import { isCurrentDayByIndex } from '../../../app/config/shedule/helpers/is-current-day-by-index';
 
 export function useDayList() {
-  const setCurrentDayName = useSetAtom(currentDayNameAtom);
+  const setSelectedDayName = useSetAtom(selectedDayNameAtom);
   const setIsDayEventsModalOpen = useSetAtom(isDayEventsModalOpenAtom);
-  const setCurrentDayEvents = useSetAtom(currentDayEventsAtom);
+  const setSelectedDayEvents = useSetAtom(selectedDayEventsAtom);
   const setIsCurrentDay = useSetAtom(isCurrentDayAtom);
 
   const handleDayClick = (day: IDay, i: number) => {
-    setCurrentDayName(day.name);
+    setSelectedDayName(day.name);
     setIsDayEventsModalOpen(true);
-    setCurrentDayEvents(day.events);
+    setSelectedDayEvents(day.events);
     setIsCurrentDay(isCurrentDayByIndex(i));
   };
 

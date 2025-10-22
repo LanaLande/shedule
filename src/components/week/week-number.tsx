@@ -1,10 +1,17 @@
+import { COLORS_CONFIG, GRADIENT_COLORS_CONFIG } from '../../app/config/colors/colors.config';
 import { isEvenWeek } from '../../app/config/time/time.config';
+import { GradientBorderDiv } from '../../shared/gradient-border-div/gradient-border-div';
 
 export function WeekNumber() {
-  const WEEK_NUMBER = isEvenWeek ? 2 : 1;
   return (
-    <div className="unselectable w-13 h-13 sm:w-16 sm:h-16 rounded-full flex justify-center items-center text-2xl bg-[#b761c1]">
-      {WEEK_NUMBER}
-    </div>
+    <GradientBorderDiv
+      className="unselectable w-10 h-10 sm:w-13 sm:h-13 rounded-full flex justify-center items-center text-xl"
+      style={{ background: COLORS_CONFIG.weekNumberBg }}
+      colors={GRADIENT_COLORS_CONFIG.weekNumberBorder}
+      borderWidth={3}
+      borderRadius={'100%'}
+    >
+      <p>{isEvenWeek ? 2 : 1}</p>
+    </GradientBorderDiv>
   );
 }

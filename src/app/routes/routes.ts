@@ -1,4 +1,4 @@
 export const ROUTES = {
-  daysPage: '/',
+  mainPage: '/',
   sosPage: '/sos',
 };

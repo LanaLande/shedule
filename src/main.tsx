@@ -4,7 +4,7 @@ import './index.css';
 import { HeroUIProvider } from '@heroui/react';
 
 import { BrowserRouter, Routes, Route } from 'react-router';
-import { DaysPage } from './pages/days-page';
+import { MainPage } from './pages/main-page';
 import { SosPage } from './pages/lana-page';
 import { ROUTES } from './app/routes/routes';
 
@@ -13,7 +13,7 @@ createRoot(document.getElementById('root')!).render(
     <HeroUIProvider>
       <BrowserRouter>
         <Routes>
-          <Route path={ROUTES.daysPage} element={<DaysPage />} />
+          <Route path={ROUTES.mainPage} element={<MainPage />} />
           <Route path={ROUTES.sosPage} element={<SosPage />} />
         </Routes>
       </BrowserRouter>

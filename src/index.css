@@ -4,6 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 
+
+
 html{
   padding: 0;
   margin: 0;

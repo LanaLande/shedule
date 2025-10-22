@@ -1,4 +1,3 @@
-import Grid from '@mui/material/Grid';
 import { DayItem } from './day-item';
 import clsx from 'clsx';
 import DAYS_CONFIG from '../../app/config/shedule/shedule.config';
@@ -9,19 +8,16 @@ export function DayList({ className }: { className?: string }) {
   const { handleDayClick } = useDayList();
 
   return (
-    <div className={clsx('flex gap-7 w-full flex-wrap', className)}>
-      <Grid container spacing={2}>
+    <div className={clsx('flex flex-col gap-4', className)}>
         {DAYS_CONFIG.map((day, i) => (
-          <Grid key={day.name} size={{ xs: 6, sm: 4 }}>
-            <DayItem
-              onClick={() => handleDayClick(day, i)}
-              dayName={day.name}
-              dayDuration={day.duration}
-              isCurrent={isCurrentDayByIndex(i)}
-            />
-          </Grid>
+          <DayItem
+            onClick={() => handleDayClick(day, i)}
+            dayName={day.name}
+            dayDuration={day.duration}
+            isCurrent={isCurrentDayByIndex(i)}
+            key={day.name}
+          />
         ))}
-      </Grid>
-    </div>
+      </div>
   );
 }
