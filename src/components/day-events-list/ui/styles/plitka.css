@@ -1,0 +1,18 @@
+.plitka-gradient{
+  background: linear-gradient(45deg, var(--gradient-colors));
+  background-size: 300% 100%;
+  animation-name: plitka-anim;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 3s;
+}
+
+@keyframes plitka-anim{
+  0%{
+    background-position-x: 0;
+  }
+  100%{
+    background-position-x: -300%;
+  }
+}
+

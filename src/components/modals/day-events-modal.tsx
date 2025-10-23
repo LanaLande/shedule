@@ -2,6 +2,8 @@ import { Modal, ModalBody, ModalContent, ModalHeader } from '@heroui/modal';
 import { DayEventList } from '../day-events-list/day-event-list';
 import { useAtom, useAtomValue } from 'jotai';
 import { selectedDayNameAtom, isDayEventsModalOpenAtom } from '../../app/store/jotai/atoms';
+import { COLORS_CONFIG } from '../../app/config/colors/colors.config';
+import clsx from 'clsx';
 
 export function DayEventsModal() {
   const selectedDayName = useAtomValue(selectedDayNameAtom);
@@ -18,14 +20,22 @@ export function DayEventsModal() {
       isOpen={isOpen}
       onClose={handleClose}
       scrollBehavior="inside"
-      classNames={{ base: 'bg-[#431757] text-[#ffffff] pb-7 ', wrapper: ' items-center', body: 'flex items-center' }}
+      classNames={{
+        header: COLORS_CONFIG.headerTextClassName,
+        base: clsx( COLORS_CONFIG.modalBgClassName, COLORS_CONFIG.textClassName ),
+        wrapper: 'items-center px-2',
+        body: 'flex items-center px-2',
+        backdrop: COLORS_CONFIG.modalBgWrapperClassName,
+        closeButton: COLORS_CONFIG.modalCloseButtonClassName,
+      }}
     >
       <ModalContent>
         <ModalHeader>{selectedDayName}</ModalHeader>
         <ModalBody>
-          <DayEventList className="w-[90%]" />
+          <DayEventList className="w-full sm:w-[90%]" />
         </ModalBody>
       </ModalContent>
     </Modal>
   );
 }
+

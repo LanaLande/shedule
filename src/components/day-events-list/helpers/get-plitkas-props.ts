@@ -1,4 +1,4 @@
-import { COLORS_CONFIG } from '../../../app/config/colors/colors.config';
+import { COLORS_CONFIG, GRADIENT_COLORS_CONFIG } from '../../../app/config/colors/colors.config';
 import type { IDayEvent } from '../../../app/config/shedule/interfaces/days.interface';
 
 export function getPlitkasProps({
@@ -17,25 +17,25 @@ export function getPlitkasProps({
           size: { xs: 6, md: 3 },
           value: event.timeDuration,
           isDisable,
-          color: isCurrentEvent ? COLORS_CONFIG.currentPlitka : COLORS_CONFIG.defaultPlitka,
+          plitkaColor: isCurrentEvent ? GRADIENT_COLORS_CONFIG.currentPlitka : COLORS_CONFIG.defaultPlitka,
         },
         {
           size: { xs: 6, md: 3 },
           value: event.name,
           isDisable,
-          color: isCurrentEvent ? COLORS_CONFIG.currentPlitka : COLORS_CONFIG.defaultPlitka,
+          plitkaColor: isCurrentEvent ? GRADIENT_COLORS_CONFIG.currentPlitka : COLORS_CONFIG.defaultPlitka,
         },
         {
           size: { xs: 8, md: 3 },
           value: event.teachers,
           isDisable,
-          color: isCurrentEvent ? COLORS_CONFIG.currentPlitka : COLORS_CONFIG.defaultPlitka,
+          plitkaColor: isCurrentEvent ? GRADIENT_COLORS_CONFIG.currentPlitka : COLORS_CONFIG.defaultPlitka,
         },
         {
           size: { xs: 4, md: 3 },
           value: event.audition,
           isDisable,
-          color: isCurrentEvent ? COLORS_CONFIG.currentPlitka : COLORS_CONFIG.defaultPlitka,
+          plitkaColor: isCurrentEvent ? GRADIENT_COLORS_CONFIG.currentPlitka : COLORS_CONFIG.defaultPlitka,
         },
       ];
 
@@ -45,9 +45,9 @@ export function getPlitkasProps({
           size: { xs: 6, md: 3 },
           value: event.timeDuration,
           isDisable,
-          color: isCurrentEvent ? COLORS_CONFIG.currentPlitka : COLORS_CONFIG.defaultPlitka,
+          plitkaColor: isCurrentEvent ? GRADIENT_COLORS_CONFIG.currentPlitka : COLORS_CONFIG.defaultPlitka,
         },
-        { size: { xs: 6, md: 9 }, value: event.name, isDisable, color: COLORS_CONFIG.breakPlitka },
+        { size: { xs: 6, md: 9 }, value: event.name, isDisable, plitkaColor: COLORS_CONFIG.breakPlitka },
       ];
   }
 }

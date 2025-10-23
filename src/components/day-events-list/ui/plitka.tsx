@@ -13,7 +13,7 @@ interface IProps {
   value: string | ILecture['teachers'];
   size?: { [key in 'xs' | 'sm' | 'md' | 'lg' | 'xl']?: number };
   isDisable: boolean;
-  color: string;
+  plitkaColor: string | string[];
 }
 
 export function Plitka(props: IProps) {

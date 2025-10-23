@@ -1,13 +1,13 @@
-.gradient{
+.gradientBorderDiv{
   background: linear-gradient(var(--angle, 45deg), var(--gradientColors));
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-duration: 8s;
-  animation-name: grad-anim;
+  animation-name: gradientBorderDiv-anim;
   --angle: 0deg;
 }
 
-@keyframes grad-anim{
+@keyframes gradientBorderDiv-anim{
    0%{
     --angle: 0deg;
   }

@@ -7,10 +7,9 @@ interface IProps {
   withAnimation?:boolean;
 }
 export function GradientBorderDiv({ colors, borderWidth,borderRadius, withAnimation, ...props }: IProps & React.HTMLAttributes<HTMLDivElement>) {
-  // add animation!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   return (
     <div
-      className="flex justify-center items-center gradient"
+      className="flex justify-center items-center gradientBorderDiv"
       style={
         withAnimation
           ? ({
@@ -18,10 +17,7 @@ export function GradientBorderDiv({ colors, borderWidth,borderRadius, withAnimat
               borderRadius,
               '--gradientColors': colors.toString(),
             } as React.CSSProperties)
-          : { padding: borderWidth, 
-            borderRadius,
-            background: `linear-gradient(${colors.toString()})`,
-           }
+          : { padding: borderWidth, borderRadius, background: `linear-gradient(${colors.toString()})` }
       }
     >
       <div {...props}>{props.children}</div>
@@ -29,17 +25,3 @@ export function GradientBorderDiv({ colors, borderWidth,borderRadius, withAnimat
   );
 }
 
-
-
-//  as React.CSSProperties
-
-
-// background: linear-gradient(var(--gradientColors));
-
-
-
-  // style={{
-  //       background: `linear-gradient(${colors.toString()})`,
-  //       padding: borderWidth,
-  //       borderRadius
-  //     }}
