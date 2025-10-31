@@ -248,6 +248,7 @@ SHEDULE_CONFIG.forEach((el) => {
   if (firstEvent.type === 'lecture' && lastEvent.type === 'lecture') {
     el.duration = firstEvent.timeDuration.split('-')[0] + '-' + lastEvent.timeDuration.split('-')[1];
   }
+
 });
 
 export default SHEDULE_CONFIG;

@@ -1,12 +1,12 @@
 import './styles/style.css'
 
-interface IProps {
+interface IProps extends React.HTMLAttributes<HTMLDivElement> {
   colors: string[];
   borderWidth: number;
   borderRadius:number | string;
   withAnimation?:boolean;
 }
-export function GradientBorderDiv({ colors, borderWidth,borderRadius, withAnimation, ...props }: IProps & React.HTMLAttributes<HTMLDivElement>) {
+export function GradientBorderDiv({ colors, borderWidth,borderRadius, withAnimation, ...props }: IProps) {
   return (
     <div
       className="flex justify-center items-center gradientBorderDiv"

@@ -19,6 +19,7 @@ export function useDayList() {
     setIsDayEventsModalOpen(true);
     setSelectedDayEvents(day.events);
     setIsCurrentDay(isCurrentDayByIndex(i));
+    
   };
 
   return { handleDayClick };

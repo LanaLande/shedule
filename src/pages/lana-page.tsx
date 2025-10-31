@@ -1,16 +1,6 @@
 import { forwardRef, useEffect, useRef } from "react";
 
 
-
-
-// interface IProps {
-//   ref : React.RefObject<HTMLDivElement | null>;
-// }
-
-// function Component({ ref } : IProps) {
-//   return <div ref={ref} className="bg-blue-700 w-full h-20"></div>;
-// }
-
 const ComponentWithRef = forwardRef<HTMLDivElement, {}>((_, ref) => {
   return <div ref={ref} className="bg-blue-700 w-full h-20"></div>;
 });

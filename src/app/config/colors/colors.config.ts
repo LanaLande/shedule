@@ -2,6 +2,7 @@ export const COLORS_CONFIG = {
   mainPageBg: '#4D426D',
   bgArrayColors: ['#D2B4DE', '#8B80B2', '#4D426D'],
   weekNumberBg: '#FFF5EE',
+  timerBg: '#FFF5EE',
   iconColor: '#FFF5EE',
   text: '#291B4E',
   textClassName: 'text-[#291B4E]',
@@ -22,6 +23,7 @@ export const COLORS_CONFIG = {
 export const GRADIENT_COLORS_CONFIG = {
   sosComponentBorder: ['#FFF281', '#D2B4DE', '#7FFFD4'],
   weekNumberBorder: ['#FFF281', '#D2B4DE'],
+  timerBorder: ['#FFF281', '#D2B4DE'],
   dayActiveBg: ['#FFF281', '#FFF5EE', '#FFF5EE'],
   currentPlitka: [
     '#FFF5EE',

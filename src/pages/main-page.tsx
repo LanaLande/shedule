@@ -7,6 +7,9 @@ import { SosComponent } from '../components/sos/sos-component';
 import Bg from '../shared/bg/bg';
 
 export function MainPage() {
+
+
+
   return (
     <>
       <div
