@@ -1,9 +1,13 @@
-import { currentDate } from "../../day/day.config";
 
 
 
-export function isCurrentTimeBigger (currentEventTimeEnd : string ) : boolean {
-
+export function isCurrentTimeBigger({
+  currentEventTimeEnd,
+  currentDate,
+}: {
+  currentEventTimeEnd: string;
+  currentDate: Date;
+}): boolean {
   const eventDate = new Date(`March 1, 1 ${currentEventTimeEnd}`);
 
   const eventHours = eventDate.getHours();
@@ -12,10 +16,9 @@ export function isCurrentTimeBigger (currentEventTimeEnd : string ) : boolean {
   const eventMinutes = eventDate.getMinutes();
   const currentMinutes = currentDate.getMinutes();
 
-  if(currentHours - eventHours == 0){
-    return currentMinutes - eventMinutes >= 0
-  }
-  else{
+  if (currentHours - eventHours == 0) {
+    return currentMinutes - eventMinutes >= 0;
+  } else {
     return currentHours - eventHours >= 0;
   }
 }

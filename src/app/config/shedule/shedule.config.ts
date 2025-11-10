@@ -1,4 +1,4 @@
-import { isEvenWeek } from '../time/time.config';
+import { isStaticEvenWeek } from '../static-time/static-time.config';
 import type { IDay, IDayEvent, ILecture } from './interfaces/days.interface';
 
 const SHEDULE_CONFIG: IDay[] = [
@@ -45,7 +45,7 @@ const SHEDULE_CONFIG: IDay[] = [
   {
     name: 'Вторник',
     events: [
-      isEvenWeek
+      isStaticEvenWeek
         ? {
             name: 'Англ яз',
             timeDuration: '9:55-11:35',
@@ -80,7 +80,7 @@ const SHEDULE_CONFIG: IDay[] = [
         type: 'lecture',
       },
 
-      ...(isEvenWeek
+      ...(isStaticEvenWeek
         ? ([
             {
               timeDuration: '15:50-16:20',
@@ -153,7 +153,7 @@ const SHEDULE_CONFIG: IDay[] = [
         audition: '323',
         type: 'lecture',
       },
-      ...(!isEvenWeek
+      ...(!isStaticEvenWeek
         ? [
             {
               name: 'КПиЯП',
@@ -201,7 +201,7 @@ const SHEDULE_CONFIG: IDay[] = [
         type: 'lunch',
         name: 'Обед',
       },
-      isEvenWeek
+      isStaticEvenWeek
         ? {
             name: 'История',
             timeDuration: '16:20-18:00',

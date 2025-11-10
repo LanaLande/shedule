@@ -3,11 +3,12 @@ import { COLORS_CONFIG, GRADIENT_COLORS_CONFIG } from '../../../app/config/color
 import { GradientBorderDiv } from '../../../shared/gradient-border-div/gradient-border-div';
 import { formatTime } from './helpers/formatTime';
 import { getTimeToNextBreackPoint } from './helpers/getTimeToNextBreackPoint';
+import { useAtomValue } from 'jotai';
+import { currentDateAtom } from '../../../app/store/jotai/atoms';
 
-interface IProps {}
-export function Timer({}: IProps) {
-
-  const time = getTimeToNextBreackPoint();
+export function Timer() {
+  const currentDate = useAtomValue(currentDateAtom);
+  const time = getTimeToNextBreackPoint(currentDate);
 
   return (
     <GradientBorderDiv

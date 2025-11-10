@@ -1,6 +1,6 @@
-import { COLORS_CONFIG, GRADIENT_COLORS_CONFIG } from "../../../app/config/colors/colors.config";
-import { isEvenWeek } from "../../../app/config/time/time.config";
-import { GradientBorderDiv } from "../../../shared/gradient-border-div/gradient-border-div";
+import { COLORS_CONFIG, GRADIENT_COLORS_CONFIG } from '../../../app/config/colors/colors.config';
+import { GradientBorderDiv } from '../../../shared/gradient-border-div/gradient-border-div';
+import { isStaticEvenWeek } from '../../../app/config/static-time/static-time.config';
 
 export function WeekNumber() {
   return (
@@ -11,7 +11,7 @@ export function WeekNumber() {
       borderWidth={3}
       borderRadius={'100%'}
     >
-      <p>{isEvenWeek ? 2 : 1}</p>
+      <p>{isStaticEvenWeek ? 2 : 1}</p>
     </GradientBorderDiv>
   );
 }

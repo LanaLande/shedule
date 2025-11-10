@@ -1,12 +1,13 @@
-import { currentDate } from '../../../app/config/day/day.config';
-import { isCurrentTimeBigger } from '../../../app/config/time/helpers/is-current-time-bigger';
+import { isCurrentTimeBigger } from '../../../app/config/static-time/helpers/is-current-time-bigger';
 
 function isCurrentTimeEqualEventTime({
   eventStartTime,
   eventEndTime,
+  currentDate,
 }: {
   eventStartTime: string;
   eventEndTime: string;
+  currentDate: Date;
 }): boolean {
   const eventDateStart = new Date(`March 1, 2025 ${eventStartTime}`);
   const eventDateEnd = new Date(`March 1, 2025 ${eventEndTime}`);
@@ -30,10 +31,10 @@ function isCurrentTimeEqualEventTime({
   return false;
 }
 
-export function getDayEventItemProps(timeDuration: string) {
+export function getDayEventItemProps({ currentDate, timeDuration }: { timeDuration: string; currentDate: Date }) {
   const [eventStartTime, eventEndTime] = timeDuration.split('-');
-  const isPast = isCurrentTimeBigger(eventEndTime);
-  const isCurrentEvent = isCurrentTimeEqualEventTime({ eventStartTime, eventEndTime });
+  const isPast = isCurrentTimeBigger({ currentEventTimeEnd: eventEndTime, currentDate });
+  const isCurrentEvent = isCurrentTimeEqualEventTime({ eventStartTime, eventEndTime, currentDate });
 
   return { isPast, isCurrentEvent };
 }

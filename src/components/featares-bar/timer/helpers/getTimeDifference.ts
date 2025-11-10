@@ -1,16 +1,10 @@
-import { currentDate } from '../../../../app/config/day/day.config';
 import { differenceInHours, differenceInMinutes, differenceInSeconds } from 'date-fns';
 
-const getCalcDate = (hours: number, minutes: number, seconds: number = 0) => {
-  return new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), hours, minutes, seconds);
-};
-
-export function getTimeDifference(hours: number, minutes: number, seconds: number = 0) {
-  const firstEventDate = getCalcDate(hours, minutes, seconds);
+export function getTimeDifference(dateBefore: Date, dateAfter: Date) {
 
   return {
-    hours: differenceInHours(firstEventDate, currentDate),
-    minutes: differenceInMinutes(firstEventDate, currentDate) - differenceInHours(firstEventDate, currentDate) * 60,
-    seconds: differenceInSeconds(firstEventDate, currentDate) - differenceInMinutes(firstEventDate, currentDate) * 60,
+    hours: differenceInHours(dateAfter, dateBefore),
+    minutes: differenceInMinutes(dateAfter, dateBefore) - differenceInHours(dateAfter, dateBefore) * 60,
+    seconds: differenceInSeconds(dateAfter, dateBefore) - differenceInMinutes(dateAfter, dateBefore) * 60,
   };
 }
