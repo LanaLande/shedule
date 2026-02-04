@@ -15,7 +15,7 @@ export default defineConfig({
       },
       manifest: {
         name: "Lana's Lande shedule",
-        short_name: 'Shedule',
+        short_name: 'Schedule',
         description: 'Ничего в голову не приходит',
         theme_color: '#4D426D',
         display: 'standalone',
