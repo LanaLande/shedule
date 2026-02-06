@@ -150,7 +150,7 @@ const SHEDULE_CONFIG: IDay[] = [
         : ([
             {
               name: 'Безопасность',
-              timeDuration: '16:20-18:00',
+              timeDuration: '18:15-19:55',
               teachers: ['Бондаренко Павел Игоревич'],
               audition: '319',
               type: 'lecture',
@@ -164,17 +164,17 @@ const SHEDULE_CONFIG: IDay[] = [
     events: [
       isStaticEvenWeek
         ? {
-            name: 'ООС и ЭС',
-            timeDuration: '12:15-13:55',
-            teachers: ['Богдашич Елена Ефимовна'],
-            audition: '205',
-            type: 'lecture',
-          }
-        : {
             name: 'Сети',
             timeDuration: '12:15-13:55',
             teachers: ['Марков Владислав Игоревич'],
             audition: '318',
+            type: 'lecture',
+          }
+        : {
+            name: 'ООС и ЭС',
+            timeDuration: '12:15-13:55',
+            teachers: ['Богдашич Елена Ефимовна'],
+            audition: '205',
             type: 'lecture',
           },
       {
